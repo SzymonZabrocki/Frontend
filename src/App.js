@@ -4,8 +4,6 @@ import Navbar from './components/Navbar/Navbar'
 
 import MainPage from './containers/MainPage/MainPage'
 
-import AddMeme from './components/AddMeme/AddMeme'
-
 class App extends Component {
 
   render() {
@@ -13,7 +11,6 @@ class App extends Component {
       <div style={{backgroundColor: "#33322e"}}>
         <Navbar/>
         <MainPage/>
-        <AddMeme/>
       </div>
     );
   }
