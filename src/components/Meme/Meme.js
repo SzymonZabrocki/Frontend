@@ -1,15 +1,17 @@
 import React from 'react'
 
 const meme = (props) => (
-  // <article className="border border-secondary rounded-2 mb-4" style={{ textAlign: 'center', width: "500px" }}>
-  <div className="container-sm">
+  <div className="container-sm"  style={{padding: "30px"}}>
     <div className="row align-items-center m-3">
 
       <div className="col">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text"><small className="text-muted">{props.tags}</small></p>
+        <div className="card" style={{padding: "30px",
+                                      backgroundColor: "lightgray",
+                                      marginTop: "30px"}}>
+
+          <div className="card-body" style={{color: "white", backgroundColor: "#545452", borderRadius:"500px;"}}>
+            <h3 className="card-title" >{props.title}</h3>
+            <p className="card-text"><small style={{color:"#d1d1c5"}} >{props.tags}</small></p>
           </div>
           <img src={props.image} className="card-img-bottom mx-auto" alt="..." />
         </div>

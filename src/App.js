@@ -10,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{backgroundColor: "#33322e"}}>
         <Navbar/>
         <MainPage/>
         <AddMeme/>

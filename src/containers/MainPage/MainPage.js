@@ -30,7 +30,7 @@ class MainPage extends Component {
     }
 
     return (
-      <div className="container-md" style={{width: "50%", marginTop: "70px"}}>
+      <div className="container-md" style={{width: "50%"}}>
         <section >
           {memes}
         </section>
