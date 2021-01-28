@@ -4,15 +4,21 @@ import AddMeme from '../AddMeme/AddMeme'
 
 class Navbar extends Component {
   state={
-    purchasing: false
+    purchasing: false,
+    searchFor: ''
   }
 
-  purchaseCancleHandler = () => {
+  closeModal = () => {
     this.setState({ purchasing: false })
   }
 
-  purchaseContinueHandler = () => {
+  openModal = () => {
     this.setState({purchasing: true})
+  }
+
+  onSearchForChange = (event) =>{
+    this.setState({searchFor: event.target.value})
+    console.log(event.target.value)
   }
 
   render(){
@@ -22,13 +28,13 @@ class Navbar extends Component {
         <div className="container-fluid">
           <a href="/" className="navbar-brand">Memownia</a>
           <form className="d-flex">
-            <a className="navbar-brand" onClick={this.purchaseContinueHandler}>Dodaj Mema</a>
-            <input className="form-control me-2" type="search" placeholder="Wyszukaj mema" aria-label="Search" />
+            <a className="navbar-brand" onClick={this.openModal}>Dodaj Mema</a>
+            <input className="form-control me-2" type="search" placeholder="Wyszukaj mema" value={this.state.searchFor} onChange={this.onSearchForChange} aria-label="Search" />
             <button className="btn btn-light" type="submit">Szukaj</button>
           </form>
         </div>
       </nav>
-      <Modal show={this.state.purchasing} modalClosed={this.purchaseCancleHandler}>
+      <Modal show={this.state.purchasing} modalClosed={this.closeModal}>
         <AddMeme/>
       </Modal>
     </div>

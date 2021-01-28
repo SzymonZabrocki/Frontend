@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Meme from '../../components/Meme/Meme'
-import Modal from '../../components/Modal/Modal'
-import Addmeme from '../../components/AddMeme/AddMeme'
 
 class MainPage extends Component {
   state = {
     memes: [],
     error: false,
-    purchasing: false
+    purchasing: false,
+    searchFor: ''
   }
 
   componentDidMount() {
@@ -23,29 +22,24 @@ class MainPage extends Component {
       })
   }
 
-  purchaseCancleHandler = () => {
-    this.setState({ purchasing: false })
-  }
-
-  purchaseContinueHandler = () => {
-    alert('You Continue')
+  onSearchForChange = (event) => {
+    this.setState({searchFor: event.target.value})
   }
 
   render() {
-
     let memes = <p style={{ textAlign: 'center' }}>Something went wrong</p>
     if (!this.state.error) {
       memes = this.state.memes.map(meme => {
-        return <Meme key={meme._id} title={meme.title} tags={meme.tags} image={meme.memeImage} />
+        if(this.state.searchFor === '' || (meme.title).includes(this.state.searchFor) || (meme.tags).includes(this.state.searchFor)){
+           return <Meme key={meme._id} title={meme.title} tags={meme.tags} image={meme.memeImage} />
+        }
       })
     }
 
     return (
-      <div className="container-md" style={{width: "50%"}}>
-        <section >
-          {/* <Modal show={this.state.purchasing} modalClosed={this.purchaseCancleHandler}>
-            <Addmeme/>
-          </Modal> */}
+      <div className="container-md" style={{ width: "50%" }}>
+        <section>
+          <input style={{ marginTop: "70px" }} type="text" value={this.state.searchFor} onChange={this.onSearchForChange} />
           {memes}
         </section>
       </div>

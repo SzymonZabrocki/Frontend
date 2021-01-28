@@ -5,7 +5,7 @@ class AddMeme extends Component {
   state = {
     title: '',
     tags: '',
-    memeImage: ''
+    memeImage: '',
   }
 
   postDataHandler = () => {
@@ -16,9 +16,7 @@ class AddMeme extends Component {
     }
 
     axios.post('http://localhost:3000/memes', data)
-      .then(response => {
-        console.log(response);
-      })
+    alert('Udało się')
   }
 
   render() {
