@@ -16,11 +16,6 @@ class Navbar extends Component {
     this.setState({purchasing: true})
   }
 
-  onSearchForChange = (event) =>{
-    this.setState({searchFor: event.target.value})
-    console.log(event.target.value)
-  }
-
   render(){
     return (
     <div>
@@ -29,8 +24,6 @@ class Navbar extends Component {
           <a href="/" className="navbar-brand">Memownia</a>
           <form className="d-flex">
             <a className="navbar-brand" onClick={this.openModal}>Dodaj Mema</a>
-            <input className="form-control me-2" type="search" placeholder="Wyszukaj mema" value={this.state.searchFor} onChange={this.onSearchForChange} aria-label="Search" />
-            <button className="btn btn-light" type="submit">Szukaj</button>
           </form>
         </div>
       </nav>
