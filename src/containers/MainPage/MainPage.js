@@ -37,9 +37,9 @@ class MainPage extends Component {
     }
 
     return (
-      <div className="container-md" style={{ width: "50%" }}>
+      <div className="container-md" style={{ width: "50%"}}>
         <section>
-          <input className="" placeholder="Wyszukaj mema" style={{ marginTop: "70px" }} type="text" value={this.state.searchFor} onChange={this.onSearchForChange} />
+          <input className="container-md" style={{ marginLeft:"auto", height:"50px"}} placeholder="Wyszukaj mema" style={{ marginTop: "100px"}} type="text" value={this.state.searchFor} onChange={this.onSearchForChange} />
           {memes}
         </section>
       </div>
