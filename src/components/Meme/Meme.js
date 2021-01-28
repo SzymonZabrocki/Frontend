@@ -9,7 +9,7 @@ const meme = (props) => (
                                       backgroundColor: "lightgray",
                                       marginTop: "30px"}}>
 
-          <div className="card-body" style={{color: "white", backgroundColor: "#545452", borderRadius:"500px;"}}>
+          <div className="card-body" style={{color: "white", backgroundColor: "#545452"}}>
             <h3 className="card-title" >{props.title}</h3>
             <p className="card-text"><small style={{color:"#d1d1c5"}} >{props.tags}</small></p>
           </div>

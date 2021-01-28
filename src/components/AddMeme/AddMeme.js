@@ -23,15 +23,20 @@ class AddMeme extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Dodaj Mema</h1>
+      <div className="card" style={{padding: "30px",
+                                    backgroundColor: "lightgray",
+                                    }}> 
+        <h3 style={{marginBottom: "40px"}}>Dodaj mema</h3>
+        <div className="form-group">
         <label>Tytuł</label>
-        <input type="text" value={this.state.title} onChange={(event) => this.setState({ title: event.target.value })} />
+        <input className="form-control" type="text" value={this.state.title} onChange={(event) => this.setState({ title: event.target.value })} />
         <label>Tagi</label>
-        <input type="text" value={this.state.tags} onChange={(event) => this.setState({ tags: event.target.value })} />
+        <input className="form-control" type="text" value={this.state.tags} onChange={(event) => this.setState({ tags: event.target.value })} />
         <label>Obrazek</label>
-        <input type="text" value={this.state.memeImage} onChange={(event) => this.setState({ memeImage: event.target.value })} />
-        <button onClick={this.postDataHandler}>Dodaj</button>
+        <input className="form-control" type="text" value={this.state.memeImage} onChange={(event) => this.setState({ memeImage: event.target.value })} />
+        <small  className="form-text text-muted">Podaj link URL do obrazka lub gifa</small>
+        </div>
+        <button className="btn btn-secondary" onClick={this.postDataHandler} style={{margin: "20px"}}>Dodaj</button>
       </div>
     )
   }
